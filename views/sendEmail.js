@@ -1,5 +1,5 @@
 const nodeMailer = require('nodemailer')
-const url = /* 'http://localhost:3000' */ 'https://secret-uxgu.onrender.com'
+const url = /* 'http://localhost:3000' */ 'https://secrets-h91m.onrender.com'
 const dotenv = require('dotenv')
 dotenv.config()
 const transporter = nodeMailer.createTransport({

@@ -1,4 +1,4 @@
-const apiUrl = 'https://secret-uxgu.onrender.com' /* 'http://localhost:3000' */
+const apiUrl = 'https://secrets-h91m.onrender.com' /* 'http://localhost:3000' */
 const errorBox = document.querySelector('.error')
 const errorTxt = document.querySelector('.error h3')
 const errorBtn = document.querySelector('.error a')
