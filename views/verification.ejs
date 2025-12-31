@@ -1,14 +1,21 @@
 <%- include('./partials/header.ejs') %>
+<div class="overlay"></div>
 <nav>
     <h1>Secrets...</h1>
 </nav>
+    <div class="error box">
+        <h3></h3>
+        <a href="#" class="btn btn-success">Ok</a>
+    </div>
     <div class="loginBox box container">
         <h2>Email Verification</h2>
-        <form action="/verification" method="post">
+        <form id="verificationForm" >
             <label for="">Enter Verification code that we sent to your <strong><%-email %></strong> Email address</label>
             <input type="text" id="verificationInput" name="verificationInput" class="form-control mt-3">
             <input type="submit" class="btn btn-success mt-3">
         </form>
+        <a href="/resend/?email=<%-email %>" class="">Resend Code</a>
     </div>
+    <script src="/js/api.js"></script>
 </body>
 </html>

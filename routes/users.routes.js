@@ -53,13 +53,27 @@ router.post('/register',async(req,res)=>{
 //verification
 router.post('/verification',async(req,res)=>{
     const user = await Users.findOne({email:lastEmail})
-    if(!user) res.status(400).json({message:'User not Found!'})
+    if(!user) return res.status(400).json({message:'User not Found!'})
     if(user.verificationCode == req.body.verificationInput){
         await Users.updateOne({email:lastEmail},{$set:{isVerified:'true'}})
         lastEmail = ''
-        return res.status(200).redirect('/login')
+        return res.status(200).json({message:"Verified Successfully."})
     }else{
-        return res.status(400).json({message:'verification failed.'})
+        return res.status(400).json({message:'You enter wrong code.'})
+    }
+})
+//resend verification code
+router.get('/resend',async(req,res)=>{
+    try {
+        const verificationCode = Math.floor(100000+Math.random()*899999)
+        const user = await Users.findOne({email:req.query.email})
+        if(!user) return res.status(400).json({message:'email not found'})
+        await Users.updateOne({email:req.query.email},{$set:{verificationCode:verificationCode}})
+        sendGmail(user.email,verificationCode,user.name)
+        lastEmail = user.email
+        res.redirect('/verification')
+    } catch (error) {
+        res.status(500).json({message:error.message})
     }
 })
 

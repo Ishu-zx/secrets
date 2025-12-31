@@ -5,7 +5,8 @@ const errorBtn = document.querySelector('.error a')
 const overlay = document.querySelector('.overlay')
 const loginForm = document.querySelector('#loginForm')
 const r = document.getElementById('r')
-
+const verificationForm = document.getElementById('verificationForm')
+console.log(verificationForm)
 // REGISTER FORM
 if(r){
     r.addEventListener('submit',async(e)=>{
@@ -53,6 +54,32 @@ if(loginForm){
         console.log(data)
         if (res.ok) {
             window.location.href = `${apiUrl}`
+        } else {
+            overlay.style.display = 'block'
+            errorBox.style.scale = '1'
+            errorTxt.innerText = data.message
+        }
+    })
+}
+
+// VERIFICATION FORM
+
+if(verificationForm){
+    console.log(verificationForm)       
+    verificationForm.addEventListener('submit',async(e)=>{
+        const verificationInput = document.querySelector('#verificationInput').value
+        e.preventDefault()
+        const res = await fetch(`${apiUrl}/verification`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({verificationInput})
+        })  
+    
+        const data = await res.json()
+        console.log(data)
+        if (res.ok) {
+            alert(data.message)
+            window.location.href=`${apiUrl}/login`
         } else {
             overlay.style.display = 'block'
             errorBox.style.scale = '1'

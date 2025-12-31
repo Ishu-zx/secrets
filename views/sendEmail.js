@@ -12,7 +12,7 @@ const transporter = nodeMailer.createTransport({
 
 function sendGmail(to, verificationCode, name) {
   transporter.sendMail({
-    from: '"Secrets Zx" <ishukumar46025@gmail.com>',
+    from: '"Secrets Zx" <ishu46025@gmail.com>',
     to: to,
     subject: "Email Verification",
     html: `<!DOCTYPE html>
