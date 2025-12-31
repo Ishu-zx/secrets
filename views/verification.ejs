@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<nav>
+    <h1>Secrets...</h1>
+</nav>
+    <div class="loginBox box container">
+        <h2>Email Verification</h2>
+        <form action="/verification" method="post">
+            <label for="">Enter Verification code that we sent to your <strong><%-email %></strong> Email address</label>
+            <input type="text" id="verificationInput" name="verificationInput" class="form-control mt-3">
+            <input type="submit" class="btn btn-success mt-3">
+        </form>
+    </div>
+</body>
+</html>
