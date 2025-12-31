@@ -6,9 +6,11 @@ const usersRouter = require('./routes/users.routes')
 const auth = require('./middleware/auth')
 const path = require('path')
 const cookieParser = require('cookie-parser')
+const dotenv = require('dotenv')
 const app = express()
 app.use(cors())
-
+dotenv.config()
+const PORT = process.env.PORT || 3000
 //database connection
 connectDB()
 
@@ -27,6 +29,6 @@ app.get('/',auth,(req,res)=>{
 })
 app.use('/secrets',auth,secretsRouter)
 
-app.listen(3000,()=>{
-    console.log('Server Started!!')
+app.listen(PORT,()=>{
+    console.log(`Server started on port: ${PORT}`)
 })
