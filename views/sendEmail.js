@@ -2,6 +2,7 @@ const nodeMailer = require('nodemailer')
 const url = /* 'http://localhost:3000' */ 'https://secrets-h91m.onrender.com'
 const dotenv = require('dotenv')
 dotenv.config()
+console.log("SendGrid Key Loaded:", !!process.env.SENDGRID_API_KEY);
 const transporter = nodeMailer.createTransport({
   service: 'SendGrid',
   auth: {
