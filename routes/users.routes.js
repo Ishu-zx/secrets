@@ -45,7 +45,7 @@ router.post('/register',async(req,res)=>{
         sendGmail(email,verificationCode,name)
         user.save()
         lastEmail = email
-        res.status(200).json({message:'Code is Sent.'})
+        res.status(200).json({message:'Code sent to your email.'})
     } catch (error) {
         res.status(500).json({message:error.message})
     }

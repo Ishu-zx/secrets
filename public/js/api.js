@@ -23,6 +23,7 @@ if(r){
         const data = await res.json()
         console.log(data)
         if (res.ok) {
+            alert(data.message)
             window.location.href=`${apiUrl}/verification`
         } else {
             overlay.style.display = 'block'
