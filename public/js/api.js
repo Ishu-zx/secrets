@@ -6,7 +6,6 @@ const overlay = document.querySelector('.overlay')
 const loginForm = document.querySelector('#loginForm')
 const r = document.getElementById('r')
 const verificationForm = document.getElementById('verificationForm')
-console.log(verificationForm)
 // REGISTER FORM
 if(r){
     r.addEventListener('submit',async(e)=>{
