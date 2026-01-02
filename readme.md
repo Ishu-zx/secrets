@@ -2,7 +2,7 @@
 A simple, secure web application where users can share their deepest secrets with the world while remaining completely anonymous to other users.
 
 # Link to WebAPP
-[Secret](https://secret-uxgu.onrender.com)
+[Secret](https://secrets-h91m.onrender.com)
 
 # 📖 How it Works
 * Sign Up: Create an account using your email to ensure the platform remains bot-free.
