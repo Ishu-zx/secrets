@@ -12,8 +12,8 @@ function sendGmail(to, verificationCode, name) {
   const msg = {
     to: to,
     from: {
-      name:'Secrets Zx',
-      email:'ishu46025@gmail.com', // must match verified sender
+      name: 'Secrets Zx',
+      email: 'ishu46025@gmail.com',
     },
     subject: 'Email Verification',
     html: `
@@ -111,9 +111,9 @@ function sendGmail(to, verificationCode, name) {
   };
 
   sgMail.send(msg)
-    .then(() => console.log('✅ Email sent successfully'))
+    .then(() => console.log('Email sent successfully'))
     .catch(error => {
-      console.error('❌ SendGrid error:', error.response?.body || error);
+      console.error('SendGrid error:', error.response?.body || error);
     });
 }
 module.exports = sendGmail
