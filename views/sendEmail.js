@@ -65,7 +65,7 @@ function sendGmail(to, verificationCode, name) {
                     ${verificationCode}
                   </div>
 
-                  <!-- CTA button (verification link) -->
+                  <!-- (verification link) -->
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0; padding:0;">
                     <tr>
                       <td align="center">
