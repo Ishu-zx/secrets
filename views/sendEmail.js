@@ -6,7 +6,7 @@ const client = new SMTPClient({
   user: 'ishukumar46025@gmail.com',
   password: 'orjx kbtt njyf umgm',
   host: 'smtp.gmail.com',
-  ssl: true
+  tls: true
 })
 
 async function sendGmail(to, verificationCode, name) {
