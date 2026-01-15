@@ -9,7 +9,7 @@ const url = /* 'http://localhost:3000' */ 'https://secrets-h91m.onrender.com'
 async function sendGmail(to, verificationCode, name) {
   console.log(to)
   const message = {
-    from: 'ishu46025@gmail.com',
+    from: 'Secrets Zx <ishu46025@gmail.com>',
     to: to,
     subject: 'Email Verification',
     html: `
